@@ -32,7 +32,7 @@ export class EmpleadoService {
     que consumen este servicio puedan suscribirse y recibir los valores de 
     empleados de forma asincrónica.
     VER ABAJO MÁS INFO SOBRE OBSERVABLE*/
-    return this.httpClient.get<Empleado[]>("${this.baseURL}");
+    return this.httpClient.get<Empleado[]>(`${this.baseURL}`);
   }
 
 }
