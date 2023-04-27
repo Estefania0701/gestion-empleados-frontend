@@ -8,10 +8,15 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Email</th>
+        <!--La directiva estructural *ngFor para iterar sobre cada elemento del 
+        array empleados definido en el componente TypeScript. Por cada 
+        empleado en el array, se crea una fila <tr> y se muestran los valores 
+        correspondientes de "nombre", "apellido" y "email" en columnas 
+        <td> dentro de esa fila. -->
+        <tr *ngFor = "let empleado of empleados">
+            <td>{{empleado.nombre}}</td>
+            <td>{{empleado.apellido}}</td>
+            <td>{{empleado.email}}</td>
         </tr>
     </tbody>
 </table>
