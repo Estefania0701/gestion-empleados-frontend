@@ -1,4 +1,6 @@
-# GestionEmpleadosFrontend
+Repositorio para proyecto en Angular que contiene el frontent del proyecto backend con Spring Boot (https://github.com/Estefania0701/app-springboot-angular)
+
+--------------------------------------------------------------------------------
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.7.
 
