@@ -1,6 +1,7 @@
 import { EmpleadoService } from '../empleado.service';
 import { Empleado } from './../empleado';
 import { Component, OnInit } from '@angular/core'; //decoradores e interfaces de Angular necesarios para definir un componente
+import { Router } from '@angular/router';
 
 
 /*
@@ -29,13 +30,12 @@ export class ListaEmpleadosComponent implements OnInit{
 
   /* Recibe una instancia de EmpleadoService como inyección de dependencia. 
   Esto permite que el componente acceda al servicio para obtener los empleados.*/
-  constructor(private empleadoServicio : EmpleadoService) {}
+  constructor(private empleadoServicio : EmpleadoService, private router : Router) {}
 
   // se ejecuta cuando el componente se inicializa
   ngOnInit(): void {
     this.obtenerEmpleados(); // obtengo la lista de empleados
   }
-
 
   /* Utiliza el servicio empleadoServicio para obtener la lista de empleados. 
   Se suscribe al Observable devuelto por el método obtenerListaDeEmpleados() 
@@ -45,8 +45,21 @@ export class ListaEmpleadosComponent implements OnInit{
   private obtenerEmpleados() {
     this.empleadoServicio.obtenerListaDeEmpleados().subscribe(dato => {
       this.empleados = dato;
-    })
+    });
   }
+
+  actualizarEmpleado(id : number) {
+    this.router.navigate(['actualizar-empleado', id]);
+  }
+
+  eliminarEmpleado(id : number) {
+    this.empleadoServicio.eliminarEmpleado(id).subscribe(dato => {
+      console.log(dato);
+    this.obtenerEmpleados();
+    });
+  }
+
+
 }
 
 
