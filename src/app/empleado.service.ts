@@ -35,6 +35,17 @@ export class EmpleadoService {
     return this.httpClient.get<Empleado[]>(`${this.baseURL}`);
   }
 
+  // método para guardar
+  /* Devuelve el Observable resultante de la solicutud POST, lo cual permite que 
+  el componente que utilice el servicio se suscriba al Observable y reaccione a 
+  la respuesta del servidor.*/
+  registrarEmpleado(empleado : Empleado) : Observable<Object>{
+      /* El método post de httpClient recibe dos argumentos: la URL a la que se 
+      enviará la solicitud y los datos (el objeto empleado) que se enviarán en 
+      el cuerpo de la solicitud. */
+      return this.httpClient.post(`${this.baseURL}`, empleado);
+  }
+
 }
 
 
