@@ -18,6 +18,7 @@ import { AppComponent } from './app.component';
 import { ListaEmpleadosComponent } from './lista-empleados/lista-empleados.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RegistrarEmpleadoComponent } from './registrar-empleado/registrar-empleado.component';
+import { FormsModule } from '@angular/forms';
 
 /*Este bloque @NgModule define el módulo principal de la aplicación llamado 
 AppModule. Aquí se especifican los componentes y módulos que se utilizan en la 
@@ -31,7 +32,8 @@ aplicación. */
   imports: [ // importar y agregar otros módulos que se usarán en este módulo
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [], // servicios que pueden ser inyectados en los componentes de la app
   bootstrap: [AppComponent] // componente principal que se inicializará cuando se cargue la app
