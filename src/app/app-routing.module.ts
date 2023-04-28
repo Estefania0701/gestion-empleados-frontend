@@ -4,13 +4,15 @@ asociarlas a componentes específicos. */
 import { NgModule } from '@angular/core'; // para definir y configurar los módulos
 import { RouterModule, Routes } from '@angular/router'; // para configurar las rutas de la app
 import { ListaEmpleadosComponent } from './lista-empleados/lista-empleados.component';
+import { RegistrarEmpleadoComponent } from './registrar-empleado/registrar-empleado.component';
 
 // configuro las rutas al entrar al navegador
 /* Cada objeto Route representa una ruta de la aplicación y contiene propiedades 
 como path (ruta URL) y component (componente asociado). */
 const routes: Routes = [
-  {path : 'empleados', component:ListaEmpleadosComponent}, // cuando ingrese a "/empleados" se redirecciona a la lista de empleados
-  {path : '', redirectTo: 'empleados', pathMatch: 'full'} // si no especifico una ruta, se redirecciona a "/empleados"
+  {path : 'empleados', component: ListaEmpleadosComponent}, // cuando ingrese a "/empleados" se redirecciona a la lista de empleados
+  {path : '', redirectTo: 'empleados', pathMatch: 'full'}, // si no especifico una ruta, se redirecciona a "/empleados"
+  {path : 'registrar-empleado', component: RegistrarEmpleadoComponent}
 ];
 
 // configura el módulo de enrutamiento de la aplicación.
