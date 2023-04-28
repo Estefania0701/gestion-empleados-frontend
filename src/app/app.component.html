@@ -1,6 +1,18 @@
+<!--Barra de navegación/menú utilizando el enrutamiento de Angular-->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <!--routerLink especifica la ruta a la que se irá al hacer click-->
+            <a routerLink="empleados" routerLinkActive="active" class="nav-link">Lista de empleados</a> <!--Dirige al componente empleados-->
+        </li>
+    </ul>
+</nav>
+
 <!-- title pone el título del proyecto 
 Con class="text-center" lo alineo al centro-->
 <h1 class="text-center">{{title}}</h1>
+
+
 
 <!--router-outlet es una etiqueta de angular que sirve para mostrar componentes
 --- Se utiliza para indicar dónde se deben renderizar los componentes asociados a 
