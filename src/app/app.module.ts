@@ -17,6 +17,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListaEmpleadosComponent } from './lista-empleados/lista-empleados.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RegistrarEmpleadoComponent } from './registrar-empleado/registrar-empleado.component';
 
 /*Este bloque @NgModule define el módulo principal de la aplicación llamado 
 AppModule. Aquí se especifican los componentes y módulos que se utilizan en la 
@@ -24,7 +25,8 @@ aplicación. */
 @NgModule({
   declarations: [ // componentes del módulo
     AppComponent,
-    ListaEmpleadosComponent
+    ListaEmpleadosComponent,
+    RegistrarEmpleadoComponent
   ],
   imports: [ // importar y agregar otros módulos que se usarán en este módulo
     BrowserModule,
