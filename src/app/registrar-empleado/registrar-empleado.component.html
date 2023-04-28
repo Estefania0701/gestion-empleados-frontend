@@ -1,1 +1,40 @@
-<p>registrar-empleado works!</p>
+<!--Utiliza clases de Bootstrap para establecer un ancho de columna de 6 (mediano) 
+y un desplazamiento horizontal de 3 columnas en el centro de la página. 
+Esto ayuda a centrar el formulario en la página.-->
+<div class="col-md-6 offset-md-3">
+    <h3 class="text-center">Registro de nuevo empleado</h3>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>Nombre: </label>
+            <!-- con [(ngModel)] quedará la propiedad por ejemplo: 
+            Empleado {nombre: 'ana', apellido: 'lopez', email: 'analopez@gmail.com'}
+            VER ABAJO EXPLICACIÓN DE [(ngModel)]-->
+            <input type="text" class="form-control" id="nombre" [(ngModel)]="empleado.nombre" name="nombre">
+        </div>
+        <div class="form-group">
+            <label>Apellido: </label>
+            <input type="text" class="form-control" id="apellido" [(ngModel)]="empleado.apellido" name="apellido">
+        </div>
+        <div class="form-group">
+            <label>Email: </label>
+            <input type="email" class="form-control" id="email" [(ngModel)]="empleado.email" name="email">
+        </div>
+        <button class="btn btn-success">Guardar</button>
+    </form>
+</div>
+
+
+<!-- 
+La directiva [(ngModel)] está enlazada a la propiedad, por ej, empleado.nombre del 
+componente, lo que permite la vinculación bidireccional de datos entre el campo 
+de entrada y la propiedad del componente.
+--- Es una forma de implementar la vinculación bidireccional de datos entre los 
+elementos de formulario HTML y las propiedades del componente en el que se utiliza. 
+Permite enlazar el valor de un elemento de entrada del formulario a una propiedad 
+del componente, y al mismo tiempo, actualiza automáticamente el valor del elemento 
+de entrada cuando se actualiza la propiedad en el componente.
+--- Consta de dos partes: la parte izquierda [(ngModel)]="propiedad" se utiliza 
+para especificar la propiedad del componente a la que se vinculará el valor del 
+elemento de entrada, y la parte derecha [(ngModel)]="propiedad" se utiliza para 
+establecer el valor inicial del elemento de entrada a partir de la propiedad del 
+componente.-->
