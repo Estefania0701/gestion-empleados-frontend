@@ -41,7 +41,7 @@ export class RegistrarEmpleadoComponent implements OnInit{
   }
 
   onSubmit() {
-    console.log(this.empleado);
+    this.guardarEmpleado();
   }
 
 }
