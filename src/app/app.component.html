@@ -2,6 +2,40 @@
 Con class="text-center" lo alineo al centro-->
 <h1 class="text-center">{{title}}</h1>
 
+<!--router-outlet es una etiqueta de angular que sirve para mostrar componentes
+--- Se utiliza para indicar dónde se deben renderizar los componentes asociados a 
+las rutas definidas en la aplicación.-->
 <div class="containter">
-    <app-lista-empleados></app-lista-empleados>
+    <router-outlet></router-outlet> <!--Llamo todas las rutas de cada componente-->
 </div>
+
+
+<!-- 
+---------------------- <ROUTER-OUTLET> -----------------------------------
+
+Explicación de cómo funciona el enrutamiento
+
+1. En el archivo app-routing.module.ts, se definen las rutas de la aplicación 
+utilizando el módulo RouterModule. Por ejemplo, en este código tengo la ruta 
+'empleados' asociada al componente ListaEmpleadosComponent.
+
+2. En el archivo app.component.html, se coloca la etiqueta 
+<router-outlet></router-outlet>. Esta etiqueta sirve como un marcador o 
+contenedor donde los componentes asociados a las rutas serán renderizados.
+
+3. Cuando se carga la aplicación en el navegador y se navega a una ruta 
+específica, Angular examina la URL y busca la ruta correspondiente definida en 
+el archivo de enrutamiento.
+
+4. Una vez que se encuentra la ruta correspondiente, Angular busca el componente 
+asociado a esa ruta. En tu caso, cuando se navega a la ruta 'empleados', se 
+buscará el componente ListaEmpleadosComponent.
+
+5. El componente encontrado se renderiza dentro del <router-outlet></router-outlet> 
+en el archivo app.component.html. El contenido del componente, es decir, su 
+plantilla HTML y lógica, se muestra en ese lugar.
+
+6. Si se navega a otra ruta, Angular repite el proceso de búsqueda del componente 
+asociado y lo renderiza dentro del <router-outlet></router-outlet>, reemplazando 
+el contenido anterior.
+-->
