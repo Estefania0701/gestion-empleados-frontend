@@ -2,7 +2,7 @@ import { EmpleadoService } from '../empleado.service';
 import { Empleado } from './../empleado';
 import { Component, OnInit } from '@angular/core'; //decoradores e interfaces de Angular necesarios para definir un componente
 import { Router } from '@angular/router';
-
+import  swal  from 'sweetalert2';
 
 /*
 --- Selector: El selector del componente es 'app-lista-empleados'. Esto 
@@ -52,11 +52,32 @@ export class ListaEmpleadosComponent implements OnInit{
     this.router.navigate(['actualizar-empleado', id]);
   }
 
-  eliminarEmpleado(id : number) {
-    this.empleadoServicio.eliminarEmpleado(id).subscribe(dato => {
-      console.log(dato);
-    this.obtenerEmpleados();
-    });
+  eliminarEmpleado(id:number){
+    swal({
+      title: '¿Estás seguro?',
+      text: "Confirma si deseas eliminar al empleado",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, eliminar',
+      cancelButtonText: 'No, cancelar',
+      confirmButtonClass: 'btn btn-success',
+      cancelButtonClass: 'btn btn-danger',
+      buttonsStyling: true
+    }).then((result) => {
+      if(result.value){
+        this.empleadoServicio.eliminarEmpleado(id).subscribe(dato => {
+          console.log(dato);
+          this.obtenerEmpleados();
+          swal(
+            'Empleado eliminado',
+            'El empleado ha sido eliminado con éxito',
+            'success'
+          )
+        })
+      }
+    })
   }
 
   verDetallesDelEmpleado(id : number) {
