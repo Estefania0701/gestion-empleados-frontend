@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router'; // para configurar las r
 import { ListaEmpleadosComponent } from './lista-empleados/lista-empleados.component';
 import { RegistrarEmpleadoComponent } from './registrar-empleado/registrar-empleado.component';
 import { ActualizarEmpleadoComponent } from './actualizar-empleado/actualizar-empleado.component';
+import { EmpleadoDetallesComponent } from './empleado-detalles/empleado-detalles.component';
 
 // configuro las rutas al entrar al navegador
 /* Cada objeto Route representa una ruta de la aplicación y contiene propiedades 
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path : 'empleados', component: ListaEmpleadosComponent}, // cuando ingrese a "/empleados" se redirecciona a la lista de empleados
   {path : '', redirectTo: 'empleados', pathMatch: 'full'}, // si no especifico una ruta, se redirecciona a "/empleados"
   {path : 'registrar-empleado', component: RegistrarEmpleadoComponent},
-  {path : 'actualizar-empleado/:id', component: ActualizarEmpleadoComponent}
+  {path : 'actualizar-empleado/:id', component: ActualizarEmpleadoComponent},
+  {path : 'empleado-detalles/:id', component: EmpleadoDetallesComponent}
 ];
 
 // configura el módulo de enrutamiento de la aplicación.
