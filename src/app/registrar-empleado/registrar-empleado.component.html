@@ -3,7 +3,7 @@ y un desplazamiento horizontal de 3 columnas en el centro de la página.
 Esto ayuda a centrar el formulario en la página.-->
 <div class="col-md-6 offset-md-3">
     <h3 class="text-center">Registro de nuevo empleado</h3>
-    <form (ngSubmit)="onSubmit()">
+    <form (ngSubmit)="onSubmit()" #empleadoForm = "ngForm">
         
         <div class="form-group">
             <label>Nombre: </label>
@@ -56,7 +56,7 @@ Esto ayuda a centrar el formulario en la página.-->
             </div>
         </div>
 
-        <button class="btn btn-success">Guardar</button>
+        <button class="btn btn-success" [disabled]= "!empleadoForm.form.valid">Guardar</button>
     </form>
 </div>
 
