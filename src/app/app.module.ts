@@ -20,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegistrarEmpleadoComponent } from './registrar-empleado/registrar-empleado.component';
 import { FormsModule } from '@angular/forms';
 import { ActualizarEmpleadoComponent } from './actualizar-empleado/actualizar-empleado.component';
+import { EmpleadoDetallesComponent } from './empleado-detalles/empleado-detalles.component';
 
 /*Este bloque @NgModule define el módulo principal de la aplicación llamado 
 AppModule. Aquí se especifican los componentes y módulos que se utilizan en la 
@@ -29,7 +30,8 @@ aplicación. */
     AppComponent,
     ListaEmpleadosComponent,
     RegistrarEmpleadoComponent,
-    ActualizarEmpleadoComponent
+    ActualizarEmpleadoComponent,
+    EmpleadoDetallesComponent
   ],
   imports: [ // importar y agregar otros módulos que se usarán en este módulo
     BrowserModule,
