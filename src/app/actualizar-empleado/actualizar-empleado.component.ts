@@ -3,6 +3,7 @@ import { Empleado } from './../empleado';
 import { EmpleadoService } from './../empleado.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import  swal  from 'sweetalert2';
 
 @Component({
   selector: 'app-actualizar-empleado',
@@ -24,7 +25,7 @@ export class ActualizarEmpleadoComponent implements OnInit {
 
   irAlaListaDeEmpleados(){
     this.router.navigate(['/empleados']);
-    //swal('Empleado actualizado',`El empleado ${this.empleado.nombre} ha sido actualizado con exito`,`success`);
+    swal('Empleado actualizado',`El empleado ${this.empleado.nombre} ha sido actualizado con exito`,`success`);
   }
 
   onSubmit(){
